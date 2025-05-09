@@ -5,7 +5,8 @@ const book = require('../../src/book');
 const serverless = require("serverless-http");
 
 const app = express()
- 
+app.use(express.json())
+
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -61,9 +62,7 @@ router.put('/books/:id', book.update)
 router.delete('/books/:id', book.delete)
 
 swagger(router);
- 
-//router.use(express.json())
- 
+  
 app.use("/app", router);  
 
 exports.handler = serverless(app);
