@@ -65,6 +65,6 @@ router.delete('/books/:id', book.delete)
 swagger(router);
  
  
-app.use("/app", router);  
+app.use("/app", app);  
 
 exports.handler = serverless(app);
