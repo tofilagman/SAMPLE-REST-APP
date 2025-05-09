@@ -1,12 +1,14 @@
 let books = []
 
 exports.getAll = (req, res) => {
+  console.log(book);
   res.send(books)
 }
 
 exports.create = (req, res) => {
   const book = req.body
   books.push(book)
+  console.log(book);
   res.send(book)
 }
 
