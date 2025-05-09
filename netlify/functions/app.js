@@ -116,7 +116,7 @@ swagger(app);
  
 // httpServer.listen(80);
  
-export const handler = serverless(app);
+module.exports = serverless(app);
 
 // var privateKey = fs.readFileSync(__dirname + "/../certs/selfsigned.key", 'utf-8');
 // var cert = fs.readFileSync(__dirname + "/../certs/selfsigned.crt", 'utf-8');
