@@ -6,7 +6,7 @@ const serverless = require("serverless-http");
 
 const app = express()
 
-// app.use(express.json())
+app.use(express.json())
 
 const router = express.Router();
 
@@ -115,6 +115,6 @@ router.get('/', (req, res) => {
 //swagger(router);
  
  
-app.use("/app", router); 
+app.use("/", router);  
 
 exports.handler = serverless(app);
