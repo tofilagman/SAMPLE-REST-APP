@@ -114,11 +114,9 @@ router.get('/', (req, res) => {
 
 //swagger(router);
 
-// var httpServer = http.createServer(app);
  
-// httpServer.listen(80);
  
-//app.use("app", router);
-app.use('/.netlify/functions/', router);
+app.use("app", router);
+//app.use('/.netlify/functions/', router);
 
-module.exports = { handler: serverless(app) };
+exports.handler = serverless(app);
