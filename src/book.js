@@ -1,13 +1,14 @@
 let books = []
 
 exports.getAll = (req, res) => { 
-  res.json(getBooks());
+  res.json(books);
 }
 
 exports.create = (req, res) => {
   const book = req.body
-  books.push(book) 
-  res.json(book.toString())
+  const pb = JSON.parse(book.toString());
+  books.push(pb) 
+  res.json(pb)
 }
 
 exports.getById = (req, res) => {
