@@ -1,10 +1,8 @@
 const express = require('express')
-const swagger = require('./swagger')
-const todo = require('./todo')
-const book = require('./book');
-const http = require("http");
-const https = require("https");
-const fs = require("fs");
+const swagger = require('../../src/swagger'); 
+const todo = require('../../src/todo')
+const book = require('../../src/book');
+const serverless = require("serverless-http");
 
 const app = express()
 
@@ -114,10 +112,12 @@ app.delete('/books/:id', book.delete)
 
 swagger(app);
 
-var httpServer = http.createServer(app);
+// var httpServer = http.createServer(app);
  
-httpServer.listen(8080);
+// httpServer.listen(80);
  
+export const handler = serverless(app);
+
 // var privateKey = fs.readFileSync(__dirname + "/../certs/selfsigned.key", 'utf-8');
 // var cert = fs.readFileSync(__dirname + "/../certs/selfsigned.crt", 'utf-8');
 // var creds = {
