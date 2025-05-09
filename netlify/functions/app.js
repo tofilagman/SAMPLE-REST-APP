@@ -62,7 +62,7 @@ router.delete('/books/:id', book.delete)
 
 swagger(router);
  
-router.use(express.json())
+//router.use(express.json())
  
 app.use("/app", router);  
 
