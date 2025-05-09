@@ -1,15 +1,13 @@
 let books = []
 
-exports.getAll = (req, res) => {
-  //console.log(books);
-  res.json(books.map(x=> x.toString()))
+exports.getAll = (req, res) => { 
+  res.json(getBooks());
 }
 
 exports.create = (req, res) => {
   const book = req.body
-  books.push(book)
-  console.log(book);
-  res.json(book)
+  books.push(book) 
+  res.json(book.toString())
 }
 
 exports.getById = (req, res) => {
@@ -38,4 +36,8 @@ exports.delete = (req, res) => {
   const id = parseInt(req.params.id)
   books = books.filter((t) => t.id !== id)
   res.status(204).send()
+}
+
+const getBooks = () => {
+  return books.map(x=> JSON.parse(x.toString()));
 }
