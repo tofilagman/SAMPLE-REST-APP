@@ -1,8 +1,8 @@
 let books = []
 
 exports.getAll = (req, res) => {
-  console.log(book);
-  res.send(books)
+  console.log(books);
+  res.json(books)
 }
 
 exports.create = (req, res) => {
