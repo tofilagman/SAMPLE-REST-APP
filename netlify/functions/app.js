@@ -118,6 +118,7 @@ router.get('/', (req, res) => {
  
 // httpServer.listen(80);
  
-app.use("app", router);
+//app.use("app", router);
+app.use('/.netlify/functions/', router);
 
-module.exports = serverless(app);
+module.exports = { app: serverless(app) };
