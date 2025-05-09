@@ -1,12 +1,12 @@
 let books = []
 
 exports.getAll = (req, res) => {
-  console.log(books);
-  res.json(books)
+  //console.log(books);
+  res.json(books.map(x=> x.toString()))
 }
 
 exports.create = (req, res) => {
-  const book = Buffer.from(req.body)
+  const book = req.body
   books.push(book)
   console.log(book);
   res.json(book)
