@@ -6,7 +6,7 @@ const serverless = require("serverless-http");
 
 const app = express()
 
-app.use(express.json())
+// app.use(express.json())
 
 const router = express.Router();
 
@@ -113,10 +113,8 @@ router.get('/', (req, res) => {
 // app.delete('/books/:id', book.delete)
 
 //swagger(router);
-
  
  
-app.use("app", router);
-//app.use('/.netlify/functions/', router);
+app.use("/app", router); 
 
 exports.handler = serverless(app);
