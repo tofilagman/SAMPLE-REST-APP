@@ -62,9 +62,9 @@ router.put('/books/:id', book.update)
  */
 router.delete('/books/:id', book.delete)
 
-swagger(router);
+swagger(app);
  
  
-app.use("/app", app);  
+app.use("/app", router);  
 
 exports.handler = serverless(app);
