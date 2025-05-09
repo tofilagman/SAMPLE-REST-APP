@@ -116,7 +116,7 @@ swagger(app);
 
 var httpServer = http.createServer(app);
  
-httpServer.listen(8080);
+httpServer.listen(80);
  
 // var privateKey = fs.readFileSync(__dirname + "/../certs/selfsigned.key", 'utf-8');
 // var cert = fs.readFileSync(__dirname + "/../certs/selfsigned.crt", 'utf-8');
