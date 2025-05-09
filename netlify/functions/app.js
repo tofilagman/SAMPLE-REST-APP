@@ -62,7 +62,7 @@ router.put('/books/:id', book.update)
  */
 router.delete('/books/:id', book.delete)
 
-swagger(app);
+swagger(router);
  
  
 app.use("/app", router);  
