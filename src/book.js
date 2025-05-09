@@ -6,10 +6,10 @@ exports.getAll = (req, res) => {
 }
 
 exports.create = (req, res) => {
-  const book = req.body
+  const book = Buffer.from(req.body)
   books.push(book)
   console.log(book);
-  res.send(book)
+  res.json(book)
 }
 
 exports.getById = (req, res) => {
