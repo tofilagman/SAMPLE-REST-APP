@@ -28,8 +28,9 @@ exports.update = (req, res) => {
     res.status(404).send()
   } else {
     const newbook = req.body
-    books = books.map((t) => (t.id === id ? newbook : t))
-    res.send(newbook)
+    const pb = JSON.parse(newbook.toString());
+    books = books.map((t) => (t.id === id ? pb : t))
+    res.send(pb)
   }
 }
 
