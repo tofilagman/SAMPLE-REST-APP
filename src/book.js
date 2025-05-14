@@ -7,6 +7,7 @@ exports.getAll = (req, res) => {
 exports.create = (req, res) => {
   const book = req.body
   const pb = JSON.parse(book.toString());
+  pb.id = getRandomInt(1000, 9999);
   books.push(pb) 
   res.json(pb)
 }
@@ -42,4 +43,11 @@ exports.delete = (req, res) => {
 
 const getBooks = () => {
   return books.map(x=> JSON.parse(x.toString()));
+}
+
+
+const getRandomInt = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.trunc(Math.random() * (max - min + 1)) + min; // Inclusive of min and max
 }

@@ -68,11 +68,11 @@ var httpServer = http.createServer(app);
  
 httpServer.listen(8080);
  
-// var privateKey = fs.readFileSync(__dirname + "/../certs/selfsigned.key", 'utf-8');
-// var cert = fs.readFileSync(__dirname + "/../certs/selfsigned.crt", 'utf-8');
-// var creds = {
-//   key: privateKey,
-//   cert: cert
-// }
-// var httpsServer = https.createServer(creds, app);
-// httpsServer.listen(443);
+var privateKey = fs.readFileSync(__dirname + "/../certs/selfsigned.key", 'utf-8');
+var cert = fs.readFileSync(__dirname + "/../certs/selfsigned.crt", 'utf-8');
+var creds = {
+  key: privateKey,
+  cert: cert
+}
+var httpsServer = https.createServer(creds, app);
+httpsServer.listen(443);
