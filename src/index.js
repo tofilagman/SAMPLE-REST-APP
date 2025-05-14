@@ -13,57 +13,7 @@ app.use(express.json())
 app.get('/', (req, res) => {
   res.send('Hey! its working!')
 })
-
-/**
-   * TODO
-   * @typedef {object} Todo
-   * @property {number} id.required - Id
-   * @property {name} name - Todo Name
-   * @property {boolean} completed - Status
-   */
-
-/**
- * GET /todos
- * @summary returns all todo list
- * @return {array<object>} 200 - success response
- */
-app.get('/todos', todo.getAll)
-
-/**
- * POST /todos
- * @summary create a todo item
- * @param {Todo} request.body.required - item info
- * @return {object} 200 - success response
- */
-app.post('/todos', todo.create) 
-
-/**
- * GET /todos/{id}
- * @summary returns all todo item with specified id
- * @param {number} id.path - id of todo item
- * @return {object} 200 - success response
- */
-app.get('/todos/:id', todo.getById)
-
-/**
- * PUT /todos/{id}
- * @summary update todo item with specified id
- * @param {number} id.path - id of todo item
- * @param {Todo} request.body.required - item info
- * @return {object} 200 - success response
- */
-app.put('/todos/:id', todo.update)
-
-/**
- * DELETE /todos/{id}
- * @summary delete todo item with specified id
- * @param {number} id.path - id of todo item
- * @return {object} 200 - success response
- */
-app.delete('/todos/:id', todo.delete)
-
-//---------------------------------------------
-
+ 
 /**
    * BOOK
    * @typedef {object} Book

@@ -1,6 +1,5 @@
 const express = require('express')
-const swagger = require('../../src/swagger'); 
-const todo = require('../../src/todo')
+const swagger = require('../../src/swagger');  
 const book = require('../../src/book');
 const serverless = require("serverless-http");
 
